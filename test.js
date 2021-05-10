@@ -21,7 +21,7 @@ describe("identity", function () {
   });
 });
 
-//////////
+// //////////
 
 describe("first", function () {
   it("should be able to pull out the first element of an array", function () {
