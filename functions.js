@@ -26,7 +26,33 @@ const first = function (array, n) {
   return results;
 };
 
-const last = function (array, n) {};
+const last = function (array, n) {
+  // declare a new array to be returned
+  let results = [];
+  // if n is undefined, simply return the LAST element of the array
+  if (n === undefined) {
+    return array[array.length -1];
+  }
+  // if n is 0 return an empty array;
+  else if (n === 0) {
+    return [];
+  }
+
+  // if n is greater than array length, return all elements
+  else if (n > array.length) {
+    for (let i = 0; i < array.length; i++) {
+      results.push(array[i]);
+    }
+  }
+
+  else {
+    // i needs to initialize at n - 1 index
+    for (let i = n - 1; i < array.length; i++) {
+      results.push(array[i]);
+    }
+  }
+  return results;
+};
 
 const each = function (collection, callback) {};
 const indexOf = function (array, target) {};
