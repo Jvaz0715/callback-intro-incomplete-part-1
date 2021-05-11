@@ -55,7 +55,30 @@ const last = function (array, n) {
 };
 
 const each = function (collection, callback) {};
-const indexOf = function (array, target) {};
+
+
+
+const indexOf = function (array, target) {
+  let indexLocated = [];
+  // if target exists, we will loop and check each array[i] to see if it matches the target
+  for (let i = 0; i < array.length; i++) {
+    //if we find an index that matches the target:
+    //we will push that index or 'i', to the indexLocated array;
+    if (array[i] === target) {
+      indexLocated.push(i);
+    }
+  }
+
+  // create if statement that will account for no target found
+  if (indexLocated.length === 0) {
+    return -1;
+  } else {
+    return indexLocated[0];
+  }
+};
+
+
+
 const map = function (collection, iterator) {};
 
 module.exports = {
