@@ -54,7 +54,35 @@ const last = function (array, n) {
   return results;
 };
 
-const each = function (collection, callback) {};
+const each = function (collection, callback) {
+
+  // this will handle if collection is an array
+  // Array.isArray() takes an array as its parameter and returns true or false
+  if (Array.isArray(collection) === true) {
+    for (let i = 0; i < collection.length; i++) {
+      callback(collection[i], i, collection);
+    }
+  }
+
+  // this will handle if collection is an object
+  else if (typeof collection === 'object') {
+    // declares a variable that is the length of the object keys
+    //makes for more readable code
+    const collectionLength = Object.keys(collection).length;
+
+    // a loop that will apply the callback function as it iterates through the object
+    for (let i = 0; i < collectionLength; i++) {
+      // declare a variable that will hold the key name
+      const keyName = Object.keys(collection)[i];
+
+      // declare a variable that will hold the key Value
+      const keyValue = collection[keyName];
+
+      //finally, use callback function and apply the keyValue, keyName, and collection as its parameters
+      callback(keyValue, keyName, collection);
+    }
+  }
+};
 
 
 
@@ -90,6 +118,11 @@ const map = function (collection, iterator) {
   }
   return newCollection;
 };
+
+
+
+
+
 
 module.exports = {
   identity,
