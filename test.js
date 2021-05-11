@@ -112,31 +112,31 @@ const {
 //   });
 // });
 
-describe("indexOf", function () {
-  it("should find 40 in the list", function () {
-    var numbers = [10, 20, 30, 40, 50];
+// describe("indexOf", function () {
+//   it("should find 40 in the list", function () {
+//     var numbers = [10, 20, 30, 40, 50];
 
-    expect(indexOf(numbers, 40)).to.equal(3);
-  });
+//     expect(indexOf(numbers, 40)).to.equal(3);
+//   });
 
-  it("should be able to compute indexOf even when the native function is undefined", function () {
-    var numbers = [10, 20, 30];
+//   it("should be able to compute indexOf even when the native function is undefined", function () {
+//     var numbers = [10, 20, 30];
 
-    expect(indexOf(numbers, 20)).to.equal(1);
-  });
+//     expect(indexOf(numbers, 20)).to.equal(1);
+//   });
 
-  it("returns -1 when the target cannot be found not in the list", function () {
-    var numbers = [10, 20, 30, 40, 50];
+//   it("returns -1 when the target cannot be found not in the list", function () {
+//     var numbers = [10, 20, 30, 40, 50];
 
-    expect(indexOf(numbers, 35)).to.equal(-1);
-  });
+//     expect(indexOf(numbers, 35)).to.equal(-1);
+//   });
 
-  it("returns the first index that the target can be found at when there are multiple matches", function () {
-    var numbers = [1, 40, 40, 40, 40, 40, 40, 40, 50, 60, 70];
+//   it("returns the first index that the target can be found at when there are multiple matches", function () {
+//     var numbers = [1, 40, 40, 40, 40, 40, 40, 40, 50, 60, 70];
 
-    expect(indexOf(numbers, 40)).to.equal(1);
-  });
-});
+//     expect(indexOf(numbers, 40)).to.equal(1);
+//   });
+// });
 
 // describe("map", function () {
 //   it("should apply a function to every value in an array", function () {

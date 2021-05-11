@@ -79,7 +79,17 @@ const indexOf = function (array, target) {
 
 
 
-const map = function (collection, iterator) {};
+const map = function (collection, iterator) {
+  //declare a new collection as to not modify the existing collection
+  let newCollection = [];
+  // loop through the collection and apply the iterator function to each value
+  for (let i = 0; i < collection.length; i++) {
+    let newValue = iterator(collection[i]);
+    // once you have the newValue, push it into the newCollection array;
+    newCollection.push(newValue);
+  }
+  return newCollection;
+};
 
 module.exports = {
   identity,
