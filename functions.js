@@ -87,22 +87,40 @@ const each = function (collection, callback) {
 
 
 const indexOf = function (array, target) {
+  
+  // uses each() function from prior
   let indexLocated = [];
-  // if target exists, we will loop and check each array[i] to see if it matches the target
-  for (let i = 0; i < array.length; i++) {
-    //if we find an index that matches the target:
-    //we will push that index or 'i', to the indexLocated array;
-    if (array[i] === target) {
-      indexLocated.push(i);
+  
+  each(array, function(item, index){
+    if (item === target) {
+      indexLocated.push(index);
     }
-  }
-
-  // create if statement that will account for no target found
+  })
+  
   if (indexLocated.length === 0) {
     return -1;
   } else {
     return indexLocated[0];
   }
+
+  
+  //=========== My solution w/o each()
+  // let indexLocated = [];
+  // // if target exists, we will loop and check each array[i] to see if it matches the target
+  // for (let i = 0; i < array.length; i++) {
+  //   //if we find an index that matches the target:
+  //   //we will push that index or 'i', to the indexLocated array;
+  //   if (array[i] === target) {
+  //     indexLocated.push(i);
+  //   }
+  // }
+
+  // // create if statement that will account for no target found
+  // if (indexLocated.length === 0) {
+  //   return -1;
+  // } else {
+  //   return indexLocated[0];
+  // }
 };
 
 
